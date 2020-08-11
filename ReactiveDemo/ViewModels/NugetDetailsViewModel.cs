@@ -3,6 +3,7 @@ using ReactiveUI;
 using System;
 using System.Diagnostics;
 using System.Reactive;
+using System.Reactive.Linq;
 
 namespace ReactiveDemo.ViewModels
 {
@@ -17,7 +18,13 @@ namespace ReactiveDemo.ViewModels
         {
             _metadata = metadata;
             _defaultUrl = new Uri("https://git.io/fAlfh");
-            OpenPage = ReactiveCommand.Create(() => { Process.Start(ProjectUrl.ToString()); });
+            OpenPage = ReactiveCommand.CreateFromObservable(() =>
+            {
+                return Observable.Start(() =>
+                {
+                    Process.Start(new ProcessStartInfo(ProjectUrl.ToString()) { UseShellExecute = true });
+                });
+            });
         }
 
         public Uri IconUrl => _metadata.IconUrl ?? _defaultUrl;

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reactive.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Splat;
 
 namespace ReactiveDemo.ViewModels
 {
@@ -89,7 +90,11 @@ namespace ReactiveDemo.ViewModels
             // We subscribe to the "ThrownExceptions" property of our OAPH, where ReactiveUI 
             // marshals any exceptions that are thrown in SearchNuGetPackages method. 
             // See the "Error Handling" section for more information about this.
-            _searchResults.ThrownExceptions.Subscribe(error => { /* Handle errors here */ });
+            _searchResults.ThrownExceptions.Subscribe(error =>
+            {
+                /* Handle errors here */
+                this.Log().Error(error, @"Error!");
+            });
 
             // A helper method we can use for Visibility or Spinners to show if results are available.
             // We get the latest value of the SearchResults and make sure it's not null.
