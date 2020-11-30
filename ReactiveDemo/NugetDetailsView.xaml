@@ -1,4 +1,4 @@
-﻿<reactiveUi:ReactiveUserControl
+<reactiveUi:ReactiveUserControl
     x:TypeArguments="viewModels:NugetDetailsViewModel"
     x:Class="ReactiveDemo.NugetDetailsView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
