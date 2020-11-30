@@ -5,7 +5,7 @@ using System.Collections;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace ReactiveDemo
+namespace ReactiveDemo.Views.Converters
 {
 	public class ListBoxItemConverter : IBindingTypeConverter
 	{

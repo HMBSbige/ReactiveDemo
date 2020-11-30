@@ -1,23 +1,22 @@
-using ReactiveDemo.ViewModels;
 using ReactiveUI;
-using ReactiveUI.Winforms;
 using System.Reactive.Disposables;
+using System.Windows.Media.Imaging;
 
-namespace ReactiveDemo
+namespace ReactiveDemo.Views
 {
-	public partial class NugetDetailsView : ReactiveUserControl<NugetDetailsViewModel>
+	public partial class NugetDetailsView
 	{
 		public NugetDetailsView()
 		{
 			InitializeComponent();
-
 			this.WhenActivated(disposableRegistration =>
 			{
 				// Our 4th parameter we convert from Url into a BitmapImage. 
 				// This is an easy way of doing value conversion using ReactiveUI binding.
 				this.OneWayBind(ViewModel,
 								viewModel => viewModel.IconUrl,
-								view => view.IconImage.ImageLocation)
+								view => view.IconImage.Source,
+								url => url == null ? null : new BitmapImage(url))
 						.DisposeWith(disposableRegistration);
 
 				this.OneWayBind(ViewModel,
@@ -32,7 +31,7 @@ namespace ReactiveDemo
 
 				this.BindCommand(ViewModel!,
 								viewModel => viewModel.OpenPage,
-								view => view.TitleRun)
+								view => view.OpenButton)
 						.DisposeWith(disposableRegistration);
 			});
 		}

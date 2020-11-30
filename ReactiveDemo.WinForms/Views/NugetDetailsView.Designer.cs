@@ -1,5 +1,5 @@
 
-namespace ReactiveDemo
+namespace ReactiveDemo.Views
 {
 	partial class NugetDetailsView
 	{
