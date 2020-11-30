@@ -117,7 +117,7 @@ namespace ReactiveDemo.ViewModels
 
             var filter = new SearchFilter(false);
             var resource = await source.GetResourceAsync<PackageSearchResource>(token).ConfigureAwait(false);
-            var metadata = await resource.SearchAsync(term, filter, 0, 10, null, token).ConfigureAwait(false);
+            var metadata = await resource.SearchAsync(term, filter, 0, 10, NuGet.Common.NullLogger.Instance, token).ConfigureAwait(false);
             return metadata.Select(x => new NugetDetailsViewModel(x));
         }
     }
