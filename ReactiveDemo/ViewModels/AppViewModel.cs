@@ -21,8 +21,8 @@ namespace ReactiveDemo.ViewModels
 		// that will notify Observers, as well as WPF, that a property has 
 		// changed. If we declared this as a normal property, we couldn't tell 
 		// when it has changed!
-		private string _searchTerm;
-		public string SearchTerm
+		private string? _searchTerm;
+		public string? SearchTerm
 		{
 			get => _searchTerm;
 			set => this.RaiseAndSetIfChanged(ref _searchTerm, value);
@@ -85,7 +85,7 @@ namespace ReactiveDemo.ViewModels
 				.Where(term => !string.IsNullOrWhiteSpace(term))
 				.SelectMany(SearchNuGetPackages)
 				.ObserveOn(RxApp.MainThreadScheduler)
-				.ToProperty(this, x => x.SearchResults);
+				.ToProperty(this, x => x.SearchResults)!;
 
 			// We subscribe to the "ThrownExceptions" property of our OAPH, where ReactiveUI 
 			// marshals any exceptions that are thrown in SearchNuGetPackages method. 
@@ -108,7 +108,7 @@ namespace ReactiveDemo.ViewModels
 		// extract such code into a separate service, say, INuGetSearchService, but let's 
 		// try to avoid overcomplicating things at this time.
 		private static async Task<IEnumerable<NugetDetailsViewModel>> SearchNuGetPackages(
-			string term, CancellationToken token)
+			string? term, CancellationToken token)
 		{
 			var providers = new List<Lazy<INuGetResourceProvider>>();
 			providers.AddRange(Repository.Provider.GetCoreV3()); // Add v3 API support

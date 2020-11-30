@@ -1,15 +1,17 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
-    <UseWPF>true</UseWPF>
-  </PropertyGroup>
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+        <UseWPF>true</UseWPF>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="NuGet.Protocol" Version="5.8.0" />
-    <PackageReference Include="ReactiveUI.WPF" Version="12.1.5" />
-    <PackageReference Include="System.Reactive" Version="5.0.0" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="NuGet.Protocol" Version="5.8.0" />
+        <PackageReference Include="ReactiveUI.WPF" Version="12.1.5" />
+        <PackageReference Include="System.Reactive" Version="5.0.0" />
+    </ItemGroup>
 
 </Project>
