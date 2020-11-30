@@ -1,4 +1,4 @@
-﻿using NuGet.Configuration;
+using NuGet.Configuration;
 using NuGet.Protocol.Core.Types;
 using ReactiveUI;
 using System;
