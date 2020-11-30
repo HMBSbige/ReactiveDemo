@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net48</TargetFramework>
+        <UseWindowsForms>true</UseWindowsForms>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <RootNamespace>ReactiveDemo</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="NuGet.Protocol" Version="5.8.0" />
+        <PackageReference Include="ReactiveUI.WinForms" Version="12.1.5" />
+        <PackageReference Include="System.Reactive" Version="5.0.0" />
+    </ItemGroup>
+</Project>
