@@ -16,7 +16,7 @@ namespace ReactiveDemo
 			// dependency injection by default, but you can override this if you like.
 			Locator.CurrentMutable.RegisterViewsForViewModels(Assembly.GetCallingAssembly());
 
-			//Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
+			Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new MainWindow());

@@ -4,7 +4,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:reactiveUi="http://reactiveui.net"
-    xmlns:viewModels="clr-namespace:ReactiveDemo.ViewModels">
+    xmlns:viewModels="clr-namespace:ReactiveDemo.ViewModels;assembly=ReactiveDemo.ViewModels">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />

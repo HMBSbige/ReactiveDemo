@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
-        <TargetFramework>net48</TargetFramework>
+        <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
         <UseWindowsForms>true</UseWindowsForms>
         <LangVersion>latest</LangVersion>
         <Nullable>enable</Nullable>
@@ -10,7 +10,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="NuGet.Protocol" Version="5.8.0" />
-        <PackageReference Include="ReactiveUI.WinForms" Version="12.1.5" />
+        <PackageReference Include="ReactiveUI.WinForms" Version="13.0.27" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ReactiveDemo.ViewModels\ReactiveDemo.ViewModels.csproj" />
     </ItemGroup>
 </Project>

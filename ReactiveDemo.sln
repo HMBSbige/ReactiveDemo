@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30330.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactiveDemo", "ReactiveDemo\ReactiveDemo.csproj", "{153273B2-8469-46CD-A10D-EF1083D26ED3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveDemo.WinForms", "ReactiveDemo.WinForms\ReactiveDemo.WinForms.csproj", "{E877A388-B3E5-4A0F-92A3-9EDE41CB58CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactiveDemo.WinForms", "ReactiveDemo.WinForms\ReactiveDemo.WinForms.csproj", "{E877A388-B3E5-4A0F-92A3-9EDE41CB58CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveDemo.ViewModels", "ReactiveDemo.ViewModels\ReactiveDemo.ViewModels.csproj", "{1ED506BD-C127-47C1-9CB7-1A9F350795EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{E877A388-B3E5-4A0F-92A3-9EDE41CB58CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E877A388-B3E5-4A0F-92A3-9EDE41CB58CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E877A388-B3E5-4A0F-92A3-9EDE41CB58CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ED506BD-C127-47C1-9CB7-1A9F350795EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ED506BD-C127-47C1-9CB7-1A9F350795EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ED506BD-C127-47C1-9CB7-1A9F350795EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ED506BD-C127-47C1-9CB7-1A9F350795EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
