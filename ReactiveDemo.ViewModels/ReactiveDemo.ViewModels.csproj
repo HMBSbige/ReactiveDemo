@@ -8,9 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="NuGet.Protocol" Version="5.8.0" />
-    <PackageReference Include="ReactiveUI" Version="13.0.27" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="NuGet.Protocol" Version="5.11.0" />
+    <PackageReference Include="ReactiveUI" Version="16.2.6" />
   </ItemGroup>
 
 </Project>
