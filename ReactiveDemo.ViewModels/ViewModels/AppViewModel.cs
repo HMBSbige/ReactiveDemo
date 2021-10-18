@@ -36,8 +36,8 @@ namespace ReactiveDemo.ViewModels
 		// class subscribes to an Observable and stores a copy of the latest value.
 		// It also runs an action whenever the property changes, usually calling
 		// ReactiveObject's RaisePropertyChanged.
-		private readonly ObservableAsPropertyHelper<IEnumerable<NugetDetailsViewModel>> _searchResults;
-		public IEnumerable<NugetDetailsViewModel> SearchResults => _searchResults.Value;
+		private readonly ObservableAsPropertyHelper<IEnumerable<NugetDetailsViewModel>?> _searchResults;
+		public IEnumerable<NugetDetailsViewModel>? SearchResults => _searchResults.Value;
 
 		// Here, we want to create a property to represent when the application 
 		// is performing a search (i.e. when to show the "spinner" control that 
@@ -85,7 +85,7 @@ namespace ReactiveDemo.ViewModels
 				.Where(term => !string.IsNullOrWhiteSpace(term))
 				.SelectMany(SearchNuGetPackages)
 				.ObserveOn(RxApp.MainThreadScheduler)
-				.ToProperty(this, x => x.SearchResults)!;
+				.ToProperty(this, x => x.SearchResults);
 
 			// We subscribe to the "ThrownExceptions" property of our OAPH, where ReactiveUI 
 			// marshals any exceptions that are thrown in SearchNuGetPackages method. 
@@ -100,7 +100,7 @@ namespace ReactiveDemo.ViewModels
 			// We get the latest value of the SearchResults and make sure it's not null.
 			_isAvailable = this
 				.WhenAnyValue(x => x.SearchResults)
-				.Select(searchResults => searchResults != null)
+				.Select(searchResults => searchResults is not null)
 				.ToProperty(this, x => x.IsAvailable);
 		}
 
@@ -112,7 +112,7 @@ namespace ReactiveDemo.ViewModels
 		{
 			var providers = new List<Lazy<INuGetResourceProvider>>();
 			providers.AddRange(Repository.Provider.GetCoreV3()); // Add v3 API support
-			var package = new PackageSource("https://api.nuget.org/v3/index.json");
+			var package = new PackageSource(@"https://api.nuget.org/v3/index.json");
 			var source = new SourceRepository(package, providers);
 
 			var filter = new SearchFilter(false);
