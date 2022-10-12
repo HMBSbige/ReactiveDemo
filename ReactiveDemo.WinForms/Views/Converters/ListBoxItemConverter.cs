@@ -5,30 +5,29 @@ using System.Collections;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace ReactiveDemo.Views.Converters
+namespace ReactiveDemo.Views.Converters;
+
+public class ListBoxItemConverter : IBindingTypeConverter
 {
-	public class ListBoxItemConverter : IBindingTypeConverter
+	public int GetAffinityForObjects(Type fromType, Type toType)
 	{
-		public int GetAffinityForObjects(Type fromType, Type toType)
+		if (toType != typeof(Control.ControlCollection))
 		{
-			if (toType != typeof(Control.ControlCollection))
-			{
-				return 0;
-			}
-
-			return fromType.GetInterface(@"IEnumerable") is null ? 0 : 10;
+			return 0;
 		}
 
-		public bool TryConvert(object? from, Type toType, object? conversionHint, out object? result)
-		{
-			if (from is not IEnumerable enumerable)
-			{
-				result = null;
-				return false;
-			}
+		return fromType.GetInterface(@"IEnumerable") is null ? 0 : 10;
+	}
 
-			result = enumerable.Cast<object?>().Select(viewModel => new ViewModelControlHost { ViewModel = viewModel, Dock = DockStyle.Top });
-			return true;
+	public bool TryConvert(object? from, Type toType, object? conversionHint, out object? result)
+	{
+		if (from is not IEnumerable enumerable)
+		{
+			result = null;
+			return false;
 		}
+
+		result = enumerable.Cast<object?>().Select(viewModel => new ViewModelControlHost { ViewModel = viewModel, Dock = DockStyle.Top });
+		return true;
 	}
 }
