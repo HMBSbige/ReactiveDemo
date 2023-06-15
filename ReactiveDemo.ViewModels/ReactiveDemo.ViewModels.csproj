@@ -10,7 +10,7 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="NuGet.Protocol" Version="6.6.1" />
-    <PackageReference Include="ReactiveUI" Version="18.3.1" />
+    <PackageReference Include="ReactiveUI" Version="18.4.44" />
   </ItemGroup>
 
 </Project>
