@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="NuGet.Protocol" Version="6.9.1" />
-    <PackageReference Include="ReactiveUI" Version="19.5.72" />
+    <PackageReference Include="ReactiveUI" Version="19.6.12" />
   </ItemGroup>
 
 </Project>
