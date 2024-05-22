@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NuGet.Protocol" Version="6.9.1" />
+    <PackageReference Include="NuGet.Protocol" Version="6.10.0" />
     <PackageReference Include="ReactiveUI" Version="20.1.1" />
   </ItemGroup>
 
