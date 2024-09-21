@@ -10,7 +10,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="ReactiveUI.WinForms" Version="20.1.1" />
+        <PackageReference Include="ReactiveUI.WinForms" Version="20.1.63" />
     </ItemGroup>
 
     <ItemGroup>
